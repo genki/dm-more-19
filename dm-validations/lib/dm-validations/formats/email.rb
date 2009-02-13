@@ -32,7 +32,7 @@ module DataMapper
             obs_domain = "#{atom}([.]#{atom})*"
             domain = "(?:#{dot_atom}|#{domain_literal}|#{obs_domain})"
             addr_spec = "#{local_part}\@#{domain}"
-            pattern = /^#{addr_spec}$/
+            pattern = /^#{addr_spec.force_encoding("BINARY")}$/
         end
 
       end # module Email
